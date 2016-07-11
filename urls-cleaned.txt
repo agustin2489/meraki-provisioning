@@ -1,0 +1,61 @@
+https://dashboard.meraki.com/api/v0/
+
+Admins
+GET /organizations/[organization_id]/admins
+POST /organizations/[organization_id]/admins
+PUT /organizations/[organization_id]/admins/[id]
+DELETE /organizations/[organization_id]/admins/[id]
+
+Clients
+GET /devices/[serial]/clients
+
+Config templates
+GET /organizations/[organizationId]/configTemplates
+DELETE /organizations/[organizationId]/configTemplates/[id]
+
+Devices
+GET /networks/[networkId]/devices
+GET /networks/[networkId]/devices/[serial]
+PUT /networks/[networkId]/devices/[serial]
+POST /networks/[networkId]/devices/claim
+POST /networks/[networkId]/devices/[serial]/remove
+
+Networks
+GET /organizations/[organizationId]/networks
+GET /networks/[id]
+PUT /networks/[id]
+POST /organizations/[organizationId]/networks
+DELETE /networks/[id]
+POST /networks/[id]/bind
+POST /networks/[id]/unbind
+GET /networks/[id]/siteToSiteVpn
+PUT /networks/[id]/siteToSiteVpn
+GET /networks/[id]/traffic
+
+Organizations
+GET /organizations
+GET /organizations/[id]
+PUT /organizations/[id]
+POST /organizations
+POST /organizations/[id]/clone
+POST /organizations/[id]/claim
+GET /organizations/[id]/licenseState
+GET /organizations/[id]/inventory
+GET /organizations/[id]/snmp
+PUT /organizations/[id]/snmp
+GET /organizations/[id]/thirdPartyVPNPeers
+PUT /organizations/[id]/thirdPartyVPNPeers
+
+SAML
+GET /organizations/[organizationId]/samlRoles
+GET /organizations/[organizationId]/samlRoles/[id]
+PUT /organizations/[organizationId]/samlRoles/[id]
+POST /organizations/[organizationId]/samlRoles
+DELETE /organizations/[organizationId]/samlRoles/[id]
+
+VLANs
+GET /networks/[networkId]/vlans
+GET /networks/[networkId]/vlans/[vlanId]
+PUT /networks/[networkId]/vlans/[vlanId]
+POST /networks/[networkId]/vlans
+DELETE /networks/[networkId]/vlans/[id]

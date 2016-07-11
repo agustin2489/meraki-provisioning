@@ -1,0 +1,64 @@
+#Intended to draw out what is possible
+Base URL: https://dashboard.meraki.com/api/v0/
+Headers needed: X-Cisco-Meraki-API-Key
+Ensure you have your API key from your profile.
+
+Admins
+GET /organizations/[organization_id]/admins		#List administrators
+POST /organizations/[organization_id]/admins		#Create administrator
+PUT /organizations/[organization_id]/admins/[id]	#Update administrator
+DELETE /organizations/[organization_id]/admins/[id]	#Revoke administrator
+
+Clients
+GET /devices/[serial]/clients				#Get clients
+
+Config templates
+GET /organizations/[organizationId]/configTemplates	#List templates
+DELETE /organizations/[organizationId]/configTemplates/[id]	#Delete template
+
+Devices
+GET /networks/[networkId]/devices			#List devices
+GET /networks/[networkId]/devices/[serial]		#Get specified device
+PUT /networks/[networkId]/devices/[serial]		#Update device attribute
+POST /networks/[networkId]/devices/claim		#Claim device
+POST /networks/[networkId]/devices/[serial]/remove	#Remove device from network
+
+Networks
+GET /organizations/[organizationId]/networks		#List networks
+GET /networks/[id]					#Get speficied network
+PUT /networks/[id]					#Update network
+POST /organizations/[organizationId]/networks		#Create network
+DELETE /networks/[id]					#Delete network
+POST /networks/[id]/bind				#Bind network to template
+POST /networks/[id]/unbind				#Unbind network from template
+GET /networks/[id]/siteToSiteVpn			#Get s2s VPN settings from network, MX only
+PUT /networks/[id]/siteToSiteVpn			#Update s2s VPN settings to network, MX only
+GET /networks/[id]/traffic				#Get traffic analysis data for network
+
+Organizations
+GET /organizations					#List orgs managed by API key. Root of all requests
+GET /organizations/[id]					#Get specified organization
+PUT /organizations/[id]					#Update organization
+POST /organizations					#Create organization
+POST /organizations/[id]/clone				#Create organization as clone of existing
+POST /organizations/[id]/claim				#Claim an item to org. Can be Meraki order, license key, or device
+GET /organizations/[id]/licenseState			#Get licensing state of organization
+GET /organizations/[id]/inventory			#Get inventory state of organization
+GET /organizations/[id]/snmp				#Get SNMP settings of organization
+PUT /organizations/[id]/snmp				#Update SNMP settings of organization
+GET /organizations/[id]/thirdPartyVPNPeers		#Get 3rd party VPN peers of organization
+PUT /organizations/[id]/thirdPartyVPNPeers		#Update 3rd party VPN peers of organization
+
+SAML
+GET /organizations/[organizationId]/samlRoles		#Get SAML roles for organization
+GET /organizations/[organizationId]/samlRoles/[id]	#Get specified SAML role
+PUT /organizations/[organizationId]/samlRoles/[id]	#Update SAML role
+POST /organizations/[organizationId]/samlRoles		#Create SAML role
+DELETE /organizations/[organizationId]/samlRoles/[id]	#Remove SAML role
+
+VLANs
+GET /networks/[networkId]/vlans				#List VLANs for this network, assuming MX and layer 3 MS only
+GET /networks/[networkId]/vlans/[vlanId]		#Get specified VLAN
+PUT /networks/[networkId]/vlans/[vlanId]		#Update VLAN
+POST /networks/[networkId]/vlans			#Add VLAN
+DELETE /networks/[networkId]/vlans/[id]			#Delete VLAN
